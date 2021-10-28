@@ -8,6 +8,9 @@ from selenium.webdriver.support import expected_conditions
 def record_attendance(students, username, password, secure_word):
     options = Options()
     options.page_load_strategy = 'eager'
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
     wait = WebDriverWait(driver, timeout=10)
     original_window = driver.current_window_handle
