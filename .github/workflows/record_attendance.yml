@@ -21,4 +21,6 @@ jobs:
               pip install selenium docopt datetime
 
       - name: Run euclid.py
-        run: ./euclid.py -h
+        run: |
+              chmod +x ./euclid.py
+              ./euclid.py -h
