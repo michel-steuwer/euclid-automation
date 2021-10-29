@@ -29,4 +29,4 @@ jobs:
           STUDENT1: ${{ secrets.STUDENT1 }}
         run: |
               chmod +x ./euclid.py
-              ./euclid.py record_attendance -u "$EASE_USERNAME" -p "$EASE_PASSWORD" -s "$EASE_SECURE_WORD" --student_name="$STUDENT1" --description=Online meeting with $STUDENT1"
+              ./euclid.py record_attendance -u "$EASE_USERNAME" -p "$EASE_PASSWORD" -s "$EASE_SECURE_WORD" --student_name="$STUDENT1" --description="Online meeting with $STUDENT1"
