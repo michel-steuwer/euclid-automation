@@ -21,6 +21,12 @@ jobs:
               pip install selenium docopt datetime
 
       - name: Run euclid.py
+        shell: bash
+        env:
+          EASE_USERNAME: ${{ secrets.EASE_USERNAME }}
+          EASE_PASSWORD: ${{ secrets.EASE_PASSWORD }}
+          EASE_SECURE_WORD: ${{ secrets.EASE_SECURE_WORD }}
         run: |
               chmod +x ./euclid.py
-              ./euclid.py -h
+              ./euclid.py record_attendance -u "$EASE_USERNAME" -p "$EASE_PASSWORD" -s "$EASE_SECURE_WORD" \
+                          --student_name="Test" --description=""
