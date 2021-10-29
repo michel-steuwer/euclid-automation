@@ -26,7 +26,7 @@ jobs:
           EASE_USERNAME: ${{ secrets.EASE_USERNAME }}
           EASE_PASSWORD: ${{ secrets.EASE_PASSWORD }}
           EASE_SECURE_WORD: ${{ secrets.EASE_SECURE_WORD }}
-          STUDENT1_ONLINE: ${{ secrets.STUDENT1_ONLINE }}
+          STUDENT1: ${{ secrets.STUDENT1 }}
         run: |
               chmod +x ./euclid.py
-              ./euclid.py record_attendance -u "$EASE_USERNAME" -p "$EASE_PASSWORD" -s "$EASE_SECURE_WORD" "$STUDENT1_ONLINE"
+              ./euclid.py record_attendance -u "$EASE_USERNAME" -p "$EASE_PASSWORD" -s "$EASE_SECURE_WORD" --student_name="$STUDENT1" --description=Online meeting with $STUDENT1"
